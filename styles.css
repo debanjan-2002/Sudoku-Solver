@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    /* background-color: whitesmoke; */
+}
+h1 {
+    text-align: center;
+    padding-top: 20px;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+#board-container {
+    /* background-color: yellow; */
+    height: 450px;
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    /* max-width: 80vw; */
+}
+
+#options-container {
+    max-width: 300px;
+    /* height: 50px; */
+    /* background-color: yellow; */
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    justify-content: center;
+    gap: 2px;
+    /* border: 2px solid black; */
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    /* background-color: red; */
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+.border-bottom {
+    border-bottom: 2px solid black;
+}
+.border-left {
+    border-left: 2px solid black;
+}
+.initial-block-color {
+    background-color: rgb(215, 206, 206);
+}
+.options {
+    /* border: 2px solid black; */
+    border-radius: 4px;
+}
+.options:hover {
+    background-color: #ddd;
+}
+.panel {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+button {
+    padding: 10px 50px;
+    /* width: 20px; */
+    font-size: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: rgb(162, 162, 248);
+    transition: all 100ms;
+}
+button:hover {
+    background-color: blue;
+    color: white;
+}
+
+@media (max-width: 802px) {
+    .container {
+        flex-direction: column;
+    }
+}
