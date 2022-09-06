@@ -3,17 +3,30 @@ const optionsContainer = document.querySelector('#options-container');
 const button = document.querySelector('button');
 const startButton = document.querySelector('.start');
 const stopButton = document.querySelector('.stop');
+let selectedOption = null;
+
+// const exampleBoard = [
+//     ["5","3",".",".","7",".",".",".","."],
+//     ["6",".",".","1","9","5",".",".","."],
+//     [".","9","8",".",".",".",".","6","."],
+//     ["8",".",".",".","6",".",".",".","3"],
+//     ["4",".",".","8",".","3",".",".","1"],
+//     ["7",".",".",".","2",".",".",".","6"],
+//     [".","6",".",".",".",".","2","8","."],
+//     [".",".",".","4","1","9",".",".","5"],
+//     [".",".",".",".","8",".",".","7","9"]
+// ];
 
 const exampleBoard = [
-    ["5","3",".",".","7",".",".",".","."],
-    ["6",".",".","1","9","5",".",".","."],
-    [".","9","8",".",".",".",".","6","."],
-    ["8",".",".",".","6",".",".",".","3"],
-    ["4",".",".","8",".","3",".",".","1"],
-    ["7",".",".",".","2",".",".",".","6"],
-    [".","6",".",".",".",".","2","8","."],
-    [".",".",".","4","1","9",".",".","5"],
-    [".",".",".",".","8",".",".","7","9"]
+    [".",".",".",".",".",".",".",".","."],
+    [".",".",".",".",".",".",".",".","."],
+    [".",".",".",".",".",".",".",".","."],
+    [".",".",".",".",".",".",".",".","."],
+    [".",".",".",".",".",".",".",".","."],
+    [".",".",".",".",".",".",".",".","."],
+    [".",".",".",".",".",".",".",".","."],
+    [".",".",".",".",".",".",".",".","."],
+    [".",".",".",".",".",".",".",".","."]
 ];
 
 const speed = 100;
@@ -21,8 +34,40 @@ const delay = async () => {
     await new Promise((done) => setTimeout(() => done(), speed));
 }
 
+function selectOption() {
+    if(selectedOption) {
+        selectedOption.classList.remove('selected-color');
+    }
+    selectedOption = this;
+    selectedOption.classList.add("selected-color");
+}
+
+function selectBlock(block, row, col) {
+    if(selectedOption) {
+        if(block.innerText !== "") {
+            return;
+        }
+        block.innerText = selectedOption.innerText;
+        block.classList.add("initial-block-color");
+        exampleBoard[row][col] = block.innerText;
+    }
+}
 
 function buildBoard() {
+    for(let i = 0; i <= 9; i++) {
+        const num = document.createElement("div");
+        // num.classList.add('block');
+        num.classList.add('options');
+        if(i == 0) {
+            num.innerText = 'C';
+        }
+        else {
+            num.innerText = i;
+        }
+        num.addEventListener('click', selectOption);
+        optionsContainer.append(num);
+    }
+
     for(let r = 0; r < 9; r++) {
         for(let c = 0; c < 9; c++) {
             const block = document.createElement('div');
@@ -35,20 +80,15 @@ function buildBoard() {
             if(c == 3 || c == 6) {
                 block.classList.add('border-left');
             }
-            if(exampleBoard[r][c] !== ".") {
-                block.innerText = exampleBoard[r][c];
-                block.classList.add('initial-block-color');
-            }
+            // if(exampleBoard[r][c] !== ".") {
+            //     block.innerText = exampleBoard[r][c];
+            //     block.classList.add('initial-block-color');
+            // }
+            block.addEventListener('click', () => {
+                selectBlock(block, r, c);
+            });
             boardContainer.append(block);
         }
-    }
-    
-    for(let i = 0; i <= 9; i++) {
-        const num = document.createElement("div");
-        num.classList.add('block');
-        num.classList.add('options');
-        num.innerText = i;
-        optionsContainer.append(num);
     }
 }
 
@@ -62,6 +102,16 @@ const valid = async (row, col, c) => {
         if(parseInt(exampleBoard[rw][cl]) === c) return false;
     }
     return true;
+}
+
+const start = async () => {
+    optionsContainer.style.display = 'none';
+    const result = await solve();
+    console.log(result);
+}
+
+const stop = () => {
+    window.location.reload();
 }
 
 const solve = async () => {
@@ -86,13 +136,6 @@ const solve = async () => {
         }
     }
     return true;
-}
-const start = async () => {
-    const result = await solve();
-    console.log(result);
-}
-const stop = () => {
-    window.location.reload();
 }
 
 buildBoard();
