@@ -2,7 +2,7 @@ const boardContainer = document.querySelector('#board-container');
 const optionsContainer = document.querySelector('#options-container');
 const button = document.querySelector('button');
 const startButton = document.querySelector('.start');
-// const stopButton = document.querySelector('.stop');
+const stopButton = document.querySelector('.stop');
 
 const exampleBoard = [
     ["5","3",".",".","7",".",".",".","."],
@@ -87,12 +87,16 @@ const solve = async () => {
     }
     return true;
 }
+const start = async () => {
+    const result = await solve();
+    console.log(result);
+}
+const stop = () => {
+    window.location.reload();
+}
 
 buildBoard();
-// console.log(solve());
-startButton.addEventListener("click", function(e) {
-    solve();
-});
-
+startButton.addEventListener('click', start);
+stopButton.addEventListener('click', stop);
 // const options = document.querySelectorAll("options");
 // console.log(options);
