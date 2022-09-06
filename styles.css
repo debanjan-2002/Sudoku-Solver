@@ -8,19 +8,40 @@
     user-select: none;
 }
 
+#background-img {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+}
+#background-img img {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    opacity: 0.15;
+    background-repeat: repeat-y;
+}
+
 .container {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     gap: 2em;
+    margin-top: 25px;
     /* background-color: whitesmoke; */
+    /* border: 2px solid black; */
 }
 h1 {
     text-align: center;
-    padding-top: 20px;
+    margin-top: 15px;
+    padding-top: 10px;
     text-decoration: underline;
     text-transform: uppercase;
 }
@@ -31,6 +52,9 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     /* max-width: 80vw; */
+    /* border: 1px solid black; */
+    cursor: pointer;
+    /* border-radius: 4px; */
 }
 
 #options-container {
@@ -46,21 +70,22 @@ h1 {
 }
 
 .block {
-    width: 50px;
-    height: 50px;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
     /* background-color: red; */
-    border: 1px solid black;
+    border: 1px solid rgb(95, 92, 92);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 22px;
     font-weight: 700;
+    transition: all 200ms ease;
 }
 .border-bottom {
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
 }
 .border-left {
-    border-left: 2px solid black;
+    border-left: 3px solid black;
 }
 .initial-block-color {
     background-color: rgb(215, 206, 206);
@@ -68,9 +93,19 @@ h1 {
 .options {
     /* border: 2px solid black; */
     border-radius: 4px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    transition: all 200ms ease;
 }
 .options:hover {
-    background-color: #ddd;
+    background-color: rgb(68, 60, 60);
+    color: white;
 }
 .panel {
     /* border: 2px solid black; */
@@ -80,6 +115,10 @@ h1 {
     align-items: center;
     gap: 1em;
 }
+.selected-color {
+    background-color: black;
+    color: white;
+}
 button {
     padding: 10px 50px;
     /* width: 20px; */
@@ -88,16 +127,60 @@ button {
     text-align: center;
     border: 1px solid black;
     cursor: pointer;
-    background-color: rgb(162, 162, 248);
-    transition: all 100ms;
+    transition: all 100ms ease;
 }
-button:hover {
-    background-color: blue;
+.start {
+    background-color: rgb(70, 185, 70);
+}
+.start:hover {
+    background-color: rgb(25, 227, 25);
     color: white;
 }
-
+.stop {
+    background-color: rgb(229, 143, 143);
+}
+.stop:hover {
+    background-color: red;
+    color: white;
+}
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(41, 40, 40);
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.1em 0;
+    z-index: 200;
+    text-align: center;
+    font-weight: 700;
+}
+#footer span {
+    color: red;
+}
 @media (max-width: 802px) {
     .container {
         flex-direction: column;
+        /* justify-content: center; */
+    }
+}
+
+@media (max-width: 482px) {
+    #board-container {
+        height: 400px;
+        width: 400px;
+    }
+}
+@media (max-width: 425px) {
+    #board-container {
+        height: 350px;
+        width: 350px;
+    }
+}
+@media (max-width: 378px) {
+    #board-container {
+        height: 325px;
+        width: 325px;
     }
 }
