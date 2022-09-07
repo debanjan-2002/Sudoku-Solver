@@ -6,15 +6,15 @@ const stopButton = document.querySelector('.stop');
 let selectedOption = null;
 
 // const exampleBoard = [
-//     ["5","3",".",".","7",".",".",".","."],
-//     ["6",".",".","1","9","5",".",".","."],
-//     [".","9","8",".",".",".",".","6","."],
-//     ["8",".",".",".","6",".",".",".","3"],
-//     ["4",".",".","8",".","3",".",".","1"],
-//     ["7",".",".",".","2",".",".",".","6"],
-//     [".","6",".",".",".",".","2","8","."],
-//     [".",".",".","4","1","9",".",".","5"],
-//     [".",".",".",".","8",".",".","7","9"]
+//     ["7","6","2",".",".","9",".","1","."],
+//     ["3",".","4",".",".",".",".",".","2"],
+//     ["8",".",".",".","5","6","4",".","7"],
+//     [".","9","7","1",".",".",".",".","."],
+//     [".",".","6",".",".","8","7",".","3"],
+//     ["5","8",".",".","6",".","2",".","1"],
+//     [".","7",".","9",".",".","3",".","."],
+//     ["9",".","1","4","2",".",".","8","6"],
+//     ["2","4","5",".",".","3",".",".","."]
 // ];
 
 const exampleBoard = [
@@ -30,8 +30,10 @@ const exampleBoard = [
 ];
 
 const speed = 100;
-const delay = async () => {
-    await new Promise((done) => setTimeout(() => done(), speed));
+const delay = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(), speed);
+    });
 }
 
 function selectOption() {
@@ -134,7 +136,8 @@ const solve = async () => {
                         exampleBoard[i][j] = c.toString();
                         document.getElementById(`${i}-${j}`).innerText = c;
                         
-                        if(await solve()) return true;
+                        const res = await solve();
+                        if(res) return true;
                         
                         await delay();
                         exampleBoard[i][j] = ".";
@@ -153,3 +156,4 @@ startButton.addEventListener('click', start);
 stopButton.addEventListener('click', stop);
 // const options = document.querySelectorAll("options");
 // console.log(options);
+// console.log(delay());
