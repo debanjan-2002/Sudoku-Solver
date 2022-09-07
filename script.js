@@ -44,12 +44,22 @@ function selectOption() {
 
 function selectBlock(block, row, col) {
     if(selectedOption) {
-        if(block.innerText !== "") {
+        if(selectedOption.innerText === "C") {
+            if(block.innerText === "") {
+                return;
+            }
+            block.innerText = "";
+            block.classList.remove("initial-block-color");
+            exampleBoard[row][col] = ".";
+        }
+        else if(block.innerText !== "") {
             return;
         }
-        block.innerText = selectedOption.innerText;
-        block.classList.add("initial-block-color");
-        exampleBoard[row][col] = block.innerText;
+        else {
+            block.innerText = selectedOption.innerText;
+            block.classList.add("initial-block-color");
+            exampleBoard[row][col] = block.innerText;
+        }
     }
 }
 
@@ -59,7 +69,7 @@ function buildBoard() {
         // num.classList.add('block');
         num.classList.add('options');
         if(i == 0) {
-            num.innerText = 'C';
+            num.innerText = "C";
         }
         else {
             num.innerText = i;
