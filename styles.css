@@ -46,7 +46,7 @@ h1 {
     text-transform: uppercase;
 }
 #board-container {
-    /* background-color: yellow; */
+    background-color: rgb(209, 206, 206);
     height: 450px;
     width: 450px;
     display: flex;
@@ -88,7 +88,8 @@ h1 {
     border-left: 3px solid black;
 }
 .initial-block-color {
-    background-color: rgb(215, 206, 206);
+    background-color: rgb(68, 60, 60);
+    color: white;
 }
 .options {
     /* border: 2px solid black; */
