@@ -129,6 +129,7 @@ button {
     border: 1px solid black;
     cursor: pointer;
     transition: all 100ms ease;
+    font-weight: 700;
 }
 .start {
     background-color: rgb(70, 185, 70);
