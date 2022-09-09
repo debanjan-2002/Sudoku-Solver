@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku Solver</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/utils.css">
     <link rel="icon" href="icon.png" type="image/png">
 </head>
 <body>
     <div id="background-img"> 
-        <img src="background image.jpg" alt="">
+         <img src="background image.jpg" alt="">
     </div>
-    <h1>Sudoku Solver</h1>
-    <div class="container">
-        <div id="board-container"></div>
-        <div class="panel">
-            <div id="options-container"></div>
-            <div class="buttons">
-                <button class="start">Start</button>
-                <button class="stop">Reset</button>
+    <h1 class="text-center">Sudoku Solver</h1>
+    <div class="container flex justify-center align-center">
+        <div id="board-container" class="flex wrap"></div>
+        <div class="panel flex justify-center align-center">
+            <div id="options-container" class="flex wrap justify-start"></div>
+            <div class="buttons-container flex-col text-center">
+                <button class="start font-wt-bold">Start</button>
+                <button class="stop font-wt-bold">Reset</button>
             </div>
         </div>
     </div>
