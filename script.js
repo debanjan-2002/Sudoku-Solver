@@ -69,7 +69,7 @@ function buildBoard() {
     for(let i = 0; i <= 9; i++) {
         const num = document.createElement("div");
         // num.classList.add('block');
-        num.classList.add('options');
+        num.classList.add('options', 'flex', 'justify-center', 'align-center', 'font-wt-bold');
         if(i == 0) {
             num.innerText = "C";
         }
@@ -83,7 +83,7 @@ function buildBoard() {
     for(let r = 0; r < 9; r++) {
         for(let c = 0; c < 9; c++) {
             const block = document.createElement('div');
-            block.classList.add('block');
+            block.classList.add('block', 'flex', 'justify-center', 'align-center', 'font-wt-bold');
             block.id = `${r}-${c}`;
             
             if(r == 2 || r == 5) {
