@@ -1,0 +1,11 @@
+.flex { display: flex; }
+.wrap { flex-wrap: wrap; }
+.align-center {align-items: center; }
+.justify-center {justify-content: center; }
+.justify-start {justify-content: flex-start; }
+.flex-col {display: flex; flex-direction: column; }
+
+.text-center {text-align: center; }
+.font-wt-bold {font-weight: 700; }
+.border-bottom { border-bottom: 3px solid black; }
+.border-left { border-left: 3px solid black; }
