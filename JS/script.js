@@ -68,7 +68,6 @@ function selectBlock(block, row, col) {
 function buildBoard() {
     for(let i = 0; i <= 9; i++) {
         const num = document.createElement("div");
-        // num.classList.add('block');
         num.classList.add('options', 'flex', 'justify-center', 'align-center', 'font-wt-bold');
         if(i == 0) {
             num.innerText = "C";
@@ -92,10 +91,6 @@ function buildBoard() {
             if(c == 3 || c == 6) {
                 block.classList.add('border-left');
             }
-            // if(exampleBoard[r][c] !== ".") {
-            //     block.innerText = exampleBoard[r][c];
-            //     block.classList.add('initial-block-color');
-            // }
             block.addEventListener('click', () => {
                 selectBlock(block, r, c);
             });
@@ -103,7 +98,6 @@ function buildBoard() {
         }
     }
 }
-
 
 const valid = async (row, col, c) => {
     for(let i = 0; i < 9; i++) {
@@ -117,9 +111,15 @@ const valid = async (row, col, c) => {
 }
 
 const start = async () => {
-    optionsContainer.style.display = 'none';
-    const result = await solve();
-    console.log(result);
+    const isPossible = validBoard(exampleBoard);
+    if(isPossible) {
+        optionsContainer.style.display = 'none';
+        const result = await solve();
+        console.log(result);
+    }
+    else {
+        console.log("false");
+    }
 }
 
 const stop = () => {
@@ -154,6 +154,3 @@ const solve = async () => {
 buildBoard();
 startButton.addEventListener('click', start);
 stopButton.addEventListener('click', stop);
-// const options = document.querySelectorAll("options");
-// console.log(options);
-// console.log(delay());
