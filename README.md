@@ -21,6 +21,13 @@ This projects shows a **visual representation** of the working of backtracking a
 
 
 
+## Screenshots
+
+![App Screenshot](https://raw.githubusercontent.com/debanjan-2002/Sudoku-Solver/master/Images/img1.PNG?token=GHSAT0AAAAAABUJ72CU4476FECYRKSM5LPGYY5AFMA)
+
+![App Screenshot](https://raw.githubusercontent.com/debanjan-2002/Sudoku-Solver/master/Images/img2.PNG?token=GHSAT0AAAAAABUJ72CV3XQOETWMS7HQCR3SYY47ZAA)
+
+
 ## Support
 
 For support, email debanjan.edu.2002@gmail.com or connect me through LinkedIn.
