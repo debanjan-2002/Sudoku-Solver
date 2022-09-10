@@ -21,6 +21,47 @@ This projects shows a **visual representation** of the working of backtracking a
 
 
 
+## Backtracking Algorithm (Code Snippet)
+
+```javascript
+const valid = async (row, col, c) => {
+    for(let i = 0; i < 9; i++) {
+        if(parseInt(sudokuBoard[i][col]) === c) return false;
+        if(parseInt(sudokuBoard[row][i]) === c) return false;
+        let rw = (3 * Math.floor(row / 3)) + Math.floor(i / 3);
+        let cl = (3 * Math.floor(col / 3)) + Math.floor(i % 3);
+        if(parseInt(sudokuBoard[rw][cl]) === c) return false;
+    }
+    return true;
+}
+
+const solve = async () => {
+    for(let i = 0; i < 9; i++) {
+        for(let j = 0; j < 9; j++) {
+            if(sudokuBoard[i][j] === ".") {
+                for(let c = 1; c <= 9; c++) {
+                    if(await valid(i, j, c)) {
+                        await delay();
+                        sudokuBoard[i][j] = c.toString();
+                        document.getElementById(`${i}-${j}`).innerText = c;
+                        
+                        const res = await solve();
+                        if(res) return true;
+                        
+                        await delay();
+                        sudokuBoard[i][j] = ".";
+                        document.getElementById(`${i}-${j}`).innerText = "";
+                    }
+                }
+                return false;
+            }
+        }
+    }
+    return true;
+}
+```
+
+
 ## Screenshots
 
 ![App Screenshot](https://raw.githubusercontent.com/debanjan-2002/Sudoku-Solver/master/Images/img1.PNG?token=GHSAT0AAAAAABUJ72CU4476FECYRKSM5LPGYY5AFMA)
