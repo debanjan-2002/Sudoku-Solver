@@ -21,6 +21,13 @@ This projects shows a **visual representation** of the working of backtracking a
 
 
 
+## Screenshots
+
+![App Screenshot](https://raw.githubusercontent.com/debanjan-2002/Sudoku-Solver/master/Images/img1.PNG?token=GHSAT0AAAAAABUJ72CU4476FECYRKSM5LPGYY5AFMA)
+
+![App Screenshot](https://raw.githubusercontent.com/debanjan-2002/Sudoku-Solver/master/Images/img2.PNG?token=GHSAT0AAAAAABUJ72CV3XQOETWMS7HQCR3SYY47ZAA)
+
+
 ## Backtracking Algorithm (Code Snippet)
 
 ```javascript
@@ -60,13 +67,6 @@ const solve = async () => {
     return true;
 }
 ```
-
-
-## Screenshots
-
-![App Screenshot](https://raw.githubusercontent.com/debanjan-2002/Sudoku-Solver/master/Images/img1.PNG?token=GHSAT0AAAAAABUJ72CU4476FECYRKSM5LPGYY5AFMA)
-
-![App Screenshot](https://raw.githubusercontent.com/debanjan-2002/Sudoku-Solver/master/Images/img2.PNG?token=GHSAT0AAAAAABUJ72CV3XQOETWMS7HQCR3SYY47ZAA)
 
 
 ## Support
