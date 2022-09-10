@@ -5,7 +5,12 @@
 .justify-start {justify-content: flex-start; }
 .flex-col {display: flex; flex-direction: column; }
 
+.m-auto { margin: 0 auto; }
 .text-center {text-align: center; }
 .font-wt-bold {font-weight: 700; }
 .border-bottom { border-bottom: 3px solid black; }
 .border-left { border-left: 3px solid black; }
+.display-none { display: none; }
+.br-radius { border-radius: 0.7em; }
+.alert-success { background-color: rgb(57, 230, 42); }
+.alert-failure { background-color: rgb(255, 132, 132); }
