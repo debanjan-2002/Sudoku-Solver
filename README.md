@@ -5,7 +5,7 @@
 This projects shows a **visual representation** of the working of backtracking algorithm which is used to solve a Sudoku Puzzle.
 ## Live Link of project
 
-[Sudoku Solver](https://link-url-here.org)
+[Sudoku Solver](https://debanjan-2002.github.io/Sudoku-Solver/)
 
 
 ## Features
