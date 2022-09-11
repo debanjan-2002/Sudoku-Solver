@@ -12,14 +12,6 @@
     --select-text-color: white;
     --primary-border-color: rgb(95, 92, 92);
 }
-input,
-textarea,
-button,
-select,
-a {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-
-}
 #background-img {
     position: fixed;
     top: -50%;
@@ -64,11 +56,9 @@ h1 {
     background-color: rgb(209, 206, 206);
     height: 450px;
     width: 450px;
-    cursor: pointer;
-}
+}   
 #options-container {
     max-width: 300px;
-    cursor: pointer;
     gap: 5px;
 }
 .block {
@@ -104,7 +94,6 @@ h1 {
 button {
     padding: 10px 25px;
     font-size: 1.3rem;
-    cursor: pointer;
     transition: all 100ms ease;
 }
 .start {

@@ -14,3 +14,8 @@
 .br-radius { border-radius: 0.7em; }
 .alert-success { background-color: rgb(57, 230, 42); }
 .alert-failure { background-color: rgb(255, 132, 132); }
+.pointer {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+}
