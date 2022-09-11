@@ -5,7 +5,7 @@
 This projects shows a **visual representation** of the working of backtracking algorithm which is used to solve a Sudoku Puzzle.
 ## Live Link of project
 
-[Sudoku Solver](https://debanjan-2002.github.io/Sudoku-Solver/)
+[Sudoku Solver](https://link-url-here.org)
 
 
 ## Features
@@ -15,6 +15,26 @@ This projects shows a **visual representation** of the working of backtracking a
 - An **unsolveable state** (wrong sudoku state input) is recognised by the algorithm. 
 - *Clean*, *minimalistic* and ***responsive*** UI for seamless user experience.
 - **Time Complexity** - 9 ^ $(n * n)$, where n is the number of sides of the sudoku board (which is 9 in case of a standard sudoku board).
+## Working
+
+### 1) How to set the Sudoku State
+- When the website is loaded, the user can set the **board state**.
+- First, click on the number from the **number pad** which you want to place in the board. This will select that particular number.
+- Then select the cell on the board in which you want to place the selected number. This will put that number at that particular cell. (The selected number will be kept selected even after selecting a cell in the board).
+- If the user wants to **change** the selected number, then all you have to do is select the new number from the number pad.
+- Number on any cell on the board can be **overwritten** by other numbers by the user, in case a wrong number is placed at that cell.
+- There is a **clear button ("C")** which helps to clear any cell which has a number in it. (In case the user put a number in a cell by mistake, which was supposed to be empty).
+
+### 2) Starting the solving session
+- Once the user has set the Sudoku state, he has to click the start button for the algorithm to start working.
+- If the given Sudoku state has some **ambiguity** (that is, it is not solvable), then it will throw a message that the state is **not valid**. In that case the user needs to find the mistake and correct it.
+- If the given Sudoku state is valid, then the algorithm will start doing it's job by running the backtracking algorithm. (It may take time depending upon the complexity of the board).
+- Once the board is solved, the algorithm will be completed and a **solved message** will be shown.
+
+### 3) Resetting
+- At any given point of time, the user can reset the board by clicking the **Reset** button.
+
+
 ## Tech Stack
 
 **Client:** HTML, CSS & JavaScript
