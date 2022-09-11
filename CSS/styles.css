@@ -12,6 +12,14 @@
     --select-text-color: white;
     --primary-border-color: rgb(95, 92, 92);
 }
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+}
 #background-img {
     position: fixed;
     top: -50%;
