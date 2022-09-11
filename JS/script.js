@@ -43,9 +43,6 @@ function selectBlock(block, row, col) {
             block.classList.remove("selected-color");
             sudokuBoard[row][col] = ".";
         }
-        else if(block.innerText !== "") {
-            return;
-        }
         else {
             block.innerText = selectedOption.innerText;
             block.classList.add("selected-color");
