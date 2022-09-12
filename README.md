@@ -3,7 +3,7 @@
 
 **Sudoku Solver** is an algorithmic project based on **Backtracking Algorithm**. 
 This projects shows a **visual representation** of the working of backtracking algorithm which is used to solve a Sudoku Puzzle.
-## Live Link of project
+## Live Link of Project
 
 [Sudoku Solver](https://debanjan-2002.github.io/Sudoku-Solver/)
 
