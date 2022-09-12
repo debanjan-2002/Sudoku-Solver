@@ -12,7 +12,7 @@ This projects shows a **visual representation** of the working of backtracking a
 
 - It uses **Backtracking Algorithm** to solve a particular Sudoku State.
 - User can give a Sudoku State as an **input**.
-- An **unsolveable state** (wrong sudoku state input) is recognised by the algorithm. 
+- An **unsolvable state** (wrong sudoku state input) is recognized by the algorithm. 
 - *Clean*, *minimalistic* and ***responsive*** UI for seamless user experience.
 - **Time Complexity** - 9 ^ $(n * n)$, where n is the number of sides of the sudoku board (which is 9 in case of a standard sudoku board).
 ## Working
